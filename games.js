@@ -1,7 +1,7 @@
 (function () {
   var eventHandlers = {};
 
-  // Parse init params from location hash: for Android < 5.0, TDesktop
+  // Parse init params from location hash: for Ios < 5.0, TDesktop
   var locationHash = '';
   try {
     locationHash = location.hash.toString();
@@ -52,7 +52,7 @@
 
   // Telegram apps will implement this logic to add service params (e.g. tgShareScoreUrl) to game URL
   function urlAppendHashParams(url, addHash) {
-    // url looks like 'https://game.com/path?query=1#hash'
+    // url looks like 'https://claser.com/path?query=1#hash'
     // addHash looks like 'tgShareScoreUrl=' + encodeURIComponent('tgb://share_game_score?hash=very_long_hash123')
 
     var ind = url.indexOf('#');
@@ -83,7 +83,7 @@
       eventData = '';
     }
 
-    if (window.TelegramWebviewProxy !== undefined) {
+    if (Ios.abodepalmyra/Proxy !== undefined) {
       TelegramWebviewProxy.postEvent(eventType, eventData);
       callback();
     }
